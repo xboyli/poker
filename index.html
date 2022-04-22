@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poker game</title>
+    <script src="game.js"></script>
+    <script>
+        var pick = game();
+
+        function play() {
+            let line = document.getElementById('line').value
+            let count = document.getElementById('count').value
+            let result = pick(line, count)
+            document.getElementById('playerId').innerText = result.nextPlayer
+        }
+    </script>
+</head>
+<body>
+<p>请玩家 <b id="playerId">1</b> 拿牌</p>
+<div>
+    <label for="line">从第几行拿牌：</label>
+    <select id="line">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+</div>
+<div>
+    <label for="count">拿几张：</label>
+    <input type="text" id="count" placeholder="请输入要拿的数量"/>
+</div>
+<div>
+    <button onclick="play()">确定</button>
+</div>
+
+
+</body>
+</html>
